@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+TMP=$(CURDIR)/debian/tmp/
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	make lib
+
+override_dh_strip:
+	dh_strip --dbg-package=liboscpack-dbg
+
+override_dh_installchangelogs:
+	dh_installchangelogs CHANGES
+
+override_dh_auto_install:
+	mkdir -p ${TMP}/usr/lib
+	mkdir -p ${TMP}/usr/include/oscpack/ip
+	mkdir -p ${TMP}/usr/include/oscpack/osc
+	cp liboscpack.so.1.0.2 ${TMP}/usr/lib
+	ln -s liboscpack.so.1.0.2 ${TMP}/usr/lib/liboscpack.so.1
+	ln -s liboscpack.so.1.0.2 ${TMP}/usr/lib/liboscpack.so
+	cp ip/*.h ${TMP}/usr/include/oscpack/ip
+	cp osc/*.h ${TMP}/usr/include/oscpack/osc
+
+get-orig-source:
+	uscan --verbose --force-download --rename --repack --destdir=..

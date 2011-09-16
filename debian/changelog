@@ -1,0 +1,11 @@
+oscpack (1.0.2-1) natty; urgency=low
+
+  * Package for Natty
+
+ -- Alexandre Quessy <alexandre@quessy.net>  Fri, 16 Sep 2011 11:34:51 -0400
+
+oscpack (1.0.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #609341)  
+
+ -- Monty Taylor <mordred@inaugust.com>  Thu, 26 Aug 2010 23:00:35 -0700

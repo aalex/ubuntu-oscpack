@@ -1,0 +1,3 @@
+usr/include/oscpack/ip/*.h
+usr/include/oscpack/osc/*.h
+usr/lib/lib*.so

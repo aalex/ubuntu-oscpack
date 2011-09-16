@@ -1,0 +1,3 @@
+newer-gcc.diff
+fpic.diff
+soname.diff

@@ -1,0 +1,14 @@
+Description: Add soname to library.
+Author: Monty Taylor <mordred@inaugust.com>
+Last-Update: 2011-01-08
+--- a/Makefile
++++ b/Makefile
+@@ -63,7 +63,7 @@
+ 
+ $(LIBFILENAME): $(LIBOBJECTS)
+ 	@#GNU/Linux case
+-	$(CXX) -shared -Wl,-soname,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
++	$(CXX) -shared -Wl,-soname,$(LIBSONAME).1 -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ 	@#Mac OS X case
+ 	@#$(CXX) -dynamiclib -Wl,-install_name,$(LIBSONAME) -o $(LIBFILENAME) $(LIBOBJECTS) -lc
+ 	

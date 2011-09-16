@@ -1,0 +1,54 @@
+Description: Add includes to fix building on newer GCC.
+Author: Monty Taylor <mordred@inaugust.com>
+Last-Update: 2011-01-08
+--- a/examples/OscDump.cpp
++++ b/examples/OscDump.cpp
+@@ -35,6 +35,8 @@
+ */
+ 
+ 
++#include <cstring>
++#include <cstdlib>
+ #include <iostream>
+ 
+ #include "osc/OscReceivedElements.h"
+--- a/osc/OscPrintReceivedElements.cpp
++++ b/osc/OscPrintReceivedElements.cpp
+@@ -29,6 +29,7 @@
+ */
+ #include "OscPrintReceivedElements.h"
+ 
++#include <cstring>
+ #include <iostream>
+ #include <iomanip>
+ #include <ctime>
+--- a/tests/OscReceiveTest.cpp
++++ b/tests/OscReceiveTest.cpp
+@@ -29,6 +29,7 @@
+ */
+ #include "OscReceiveTest.h"
+ 
++#include <cstdlib>
+ #include <string.h>
+ #include <iostream>
+ 
+--- a/tests/OscSendTests.cpp
++++ b/tests/OscSendTests.cpp
+@@ -29,6 +29,7 @@
+ */
+ #include "OscSendTests.h"
+ 
++#include <cstdlib>
+ #include <iostream>
+ #include <string.h>
+ 
+--- a/tests/OscUnitTests.cpp
++++ b/tests/OscUnitTests.cpp
+@@ -29,6 +29,7 @@
+ */
+ #include "OscUnitTests.h"
+ 
++#include <cstring>
+ #include <iostream>
+ #include <iomanip>
+ 
